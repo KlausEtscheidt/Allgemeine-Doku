@@ -64,3 +64,7 @@ Remotes
 git remote -v (anzeigen)
 git remote show name (details anzeigen)
 git remote rename alter_name neuer_name (umbenennen)
+
+History löschen
+===============
+https://tecadmin.net/delete-commit-history-in-github/

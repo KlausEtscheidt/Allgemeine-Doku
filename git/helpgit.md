@@ -73,3 +73,4 @@ Einzel-File downloaden
 ======================
 git show HEAD~4:findsocket.sh > tmp_findsocket.sh
 mit HEAD~4 als treeish (commit id) 4 commits zurück
+und findsocket.sh Datei zum downloaden

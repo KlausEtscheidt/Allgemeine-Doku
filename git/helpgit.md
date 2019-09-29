@@ -54,8 +54,10 @@ anlegen
 git tag vx.x (oder commit-id anhaengen => alter Stand wir getaged)
 suchen
 git tag -l v1.*
-auf Remote
+auf Remote schieben
 git push GartenGui --tags
+von remote loeschen
+git push --delete GartenRaspi v3.3.01
 in neuen branch auschecken
 git checkout -b neuerBranch v2.0.0
 

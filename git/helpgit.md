@@ -76,4 +76,24 @@ Einzel-File downloaden
 git show HEAD\~4:findsocket.sh > tmp_findsocket.sh  
 mit HEAD~4 als treeish (commit id) 4 commits zurück  
 und findsocket.sh Datei zum downloaden  
-Achtung im Befehl oben steht im MD-Text HEAD\\\~4: da die Tilde sonst zum Format durchstreichen führt  
+Achtung im Befehl oben steht im MD-Text HEAD\\\~4: da die Tilde sonst zum Format durchstreichen führt 
+
+Commits aus History entfernen
+=============================
+Commits, die behalten werden sollen, werden in neuen branch geschoben
+1. Erzeuge neuen branch ('dummy') aus letztem Commit ('$last'), der behalten werden soll
+git branch dummy $last
+2. $destination ist Ziel branch $first der erste committ der behalten wird
+  Die commits $first bis $last  sitzen jetzt auf $destination (werden angewandt)
+  dummy hat Stand von $last
+  Achte auf ^ hinter $first
+git rebase -p --onto $destination $first^ dummy
+3. Kontrolle 
+gitk --all --date-order
+4. Checkout $destination und bringe auf Stand von dummy (entspricht $last)
+git checkout $destination
+git reset --hard dummy
+5. lösche dummy
+git branch -d dummy
+6. lösche commits aus Quellbranch $source
+git rebase -p --onto $first^ $last $source

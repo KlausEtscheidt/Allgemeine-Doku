@@ -1,3 +1,10 @@
+# Git
+
+```{contents} Inhalt
+:depth: 3
+```
+
+## Neuanlage
 1. .gitignore erzeugen
 
 2. Lege lokales repos an
@@ -23,15 +30,13 @@ git log
 Wenn Inhalt auf client und server schon unterschiedlich vorhanden runterladen mit --allow-unrelated-histories  
 git pull --allow-unrelated-histories GartenRaspi master
 
-Neuen branch downloaden
-=======================
+## Neuen branch downloaden
 git fetch macht alle branches lokal bekannt  
 dann git checkout to  
 git branch name :erzeugt neuen lokalen branch  
 git branch -vv: detail info ueber alle branches
 
-Entferne Files (untrack)
-========================
+## Entferne Files (untrack)
 1. Alle anzeigen 
 git ls-files
 2. Entferne aus repo
@@ -42,44 +47,38 @@ git status zeigt file als staged und deleted; ls-files zeigt file nicht mehr
 3. Ignorierte anzeigen
 git ls-files --others --ignored --exclude-standard
 
-Committs zeigen
-===============
+## Committs zeigen
 git log --pretty=oneline
 oder 
 git log
 
-Tags
-====
-#### anlegen
+## Tags
+### anlegen
 git tag vx.x (oder commit-id anhaengen => alter Stand wird getaged)    
-#### suchen
+### suchen
 git tag -l v1.*
-#### auf Remote schieben
+### auf Remote schieben
 git push GartenGui --tags
-#### von remote loeschen
+### von remote loeschen
 git push --delete GartenRaspi v3.3.01
-#### in neuen branch auschecken
+### in neuen branch auschecken
 git checkout -b neuerBranch v2.0.0
 
-Remotes
-=======
+## Remotes
 git remote -v (anzeigen)  
 git remote show name (details anzeigen)  
 git remote rename alter_name neuer_name (umbenennen)
 
-History löschen
-===============
+## History löschen
 https://tecadmin.net/delete-commit-history-in-github/
 
-Einzel-File downloaden
-======================
+## Einzel-File downloaden
 git show HEAD\~4:findsocket.sh > tmp_findsocket.sh  
 mit HEAD~4 als treeish (commit id) 4 commits zurück  
 und findsocket.sh Datei zum downloaden  
 Achtung im Befehl oben steht im MD-Text HEAD\\\~4: da die Tilde sonst zum Format durchstreichen führt 
 
-Commits aus History entfernen
-=============================
+## Commits aus History entfernen
 Commits, die behalten werden sollen, werden in neuen branch geschoben
 1. Erzeuge neuen branch ('dummy') aus letztem Commit ('$last'), der behalten werden soll
 git branch dummy $last

@@ -2,7 +2,7 @@
 
 ```{contents} Inhalt
 :depth: 3
-:backlinks:
+:backlinks: top
 
 ```
 

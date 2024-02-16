@@ -3,4 +3,5 @@
 ```{toctree}
 sphinx_setup
 Myst
+gitpage
 ```

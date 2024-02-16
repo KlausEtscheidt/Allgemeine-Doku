@@ -60,8 +60,25 @@ Das Skript prüft ob die chm-Datei aktuell angezeigt wird und stoppt den zugehö
 Wenn dieser beendet ist, wird die chm-Datei ins source-Verzeichnis verschoben
 und angezeigt.
 
+Das Skript muss für neue Projekte zumindest an folgenden Punkten angepasst werden:
+
+```Powershell
+    # Projektname der in conf.py als htmlhelp_basename eingetragen wurde
+    # Hieraus entsteht der Name der *.hhp-Datei
+    $projekt = "knoffhoff"
+    # Fenster-Titel der mit hhc.exe angezeigten Hilfe-Datei (zum killen)
+    $window_title = "knoffhoff 1.0 Dokumentation"
+    # Eingabeverzeichnis, das auch conf.py und die oberste index.md enthalten muss
+    $sourcedir = '.'
+    # Ausgabeverzeichnis (eigentlich immer build)
+    $outputdir = 'build'
+```
+
 ### makeall_singlehtml.ps1
 Erzeugt ebenfalls die Html-Ausgaben und zeigt sie an. 
+Anpassung wie [](#makeall_chmps) aber ohne `$windowtitle`{l=Powershell}
+
+`a = "b"`{l=python}
 
 ## conf.py ergänzen
 

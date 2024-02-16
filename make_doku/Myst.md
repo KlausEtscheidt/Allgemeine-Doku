@@ -34,10 +34,13 @@ myst_heading_anchors = 2 in conf.py einfügen
 
 s. https://myst-parser.readthedocs.io/en/v0.13.7/using/howto.html
 
-Referenzen gehen anscheinend nur mit der Syntax [meinText](#datenstruktur), wenn datenstruktur die target-id ist.
+Referenzen gehen anscheinend nur mit der Syntax [meinText](#automatisch-erzeugen), wenn `automatisch-erzeugen` die target-id ist:
+```md
+ [meinText](#automatisch-erzeugen)
+```
 
 ### Suche link-Targets:
-```shell
+```console
 myst-anchors -l 2 meine.md
 ```
 

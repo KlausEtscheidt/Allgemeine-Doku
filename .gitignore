@@ -2,5 +2,7 @@ __pycache__/
 .vscode/
 log/
 config_xml/
-build/
+build/doctrees
+build/htmlhelp
+*.chm
 *.code-workspace

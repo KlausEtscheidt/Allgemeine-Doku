@@ -7,7 +7,7 @@ Hier kommen zu merkende Dinge zum Thema programmieren rein, die man überall abr
 git/helpgit
 python/python
 python/pip
-make_doku/SphinxDoku
+make_doku/sphinx_index
 ```
 
 

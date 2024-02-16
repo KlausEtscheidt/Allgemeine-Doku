@@ -29,7 +29,7 @@ htmlhelp_basename = project
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.coverage', 'sphinx.ext.napoleon',
-              'sphinx.ext.todo', 'myst_parser']
+              'sphinx_rtd_theme', 'myst_parser']
 
 # templates_path = ['_templates']
 # exclude_patterns = []
@@ -39,7 +39,10 @@ language = 'de'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+    'collapse_navigation': False,
+}
 # html_static_path = ['_static']
 
 # autoclass_content = 'both'
@@ -49,7 +52,7 @@ html_theme = 'alabaster'
 
 napoleon_use_param = True
 
-myst_heading_anchors = 7
+myst_heading_anchors = 6
 myst_enable_extensions = ["deflist"]
 
 # def change(app, what, name, obj, options, lines):

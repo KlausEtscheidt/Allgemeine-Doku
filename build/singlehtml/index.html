@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="de" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>knoffhoff 1.0 Dokumentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d7fac754"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=70a09b52"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            knoffhoff
+          </a>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-git/helpgit">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#neuanlage">Neuanlage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#neuen-branch-downloaden">Neuen branch downloaden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#entferne-files-untrack">Entferne Files (untrack)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#committs-zeigen">Committs zeigen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#tags">Tags</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#anlegen">anlegen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#suchen">suchen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#auf-remote-schieben">auf Remote schieben</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#von-remote-loeschen">von remote loeschen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#in-neuen-branch-auschecken">in neuen branch auschecken</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#remotes">Remotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#history-loschen">History löschen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#einzel-file-downloaden">Einzel-File downloaden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#commits-aus-history-entfernen">Commits aus History entfernen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-python/python">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-python/Install">Pakete erzeugen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#aus-sourcen-zum-testen">Aus sourcen zum Testen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#aus-lokaler-wheel">Aus lokaler wheel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#wheel-erzeugen">wheel erzeugen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#anleitung-unter">Anleitung unter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#error-handling">Error-Handling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-python/pip">pip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-make_doku/sphinx_index">Sphinx-Dokus</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-make_doku/sphinx_setup">Sphinx Projekt einrichten</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#automatisches-anlegen">automatisches Anlegen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#manuelles-anlegen">manuelles Anlegen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#skripte-fur-ausgabe">Skripte für Ausgabe</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#makeall-chm-ps">makeall_chm.ps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#makeall-singlehtml-ps1">makeall_singlehtml.ps1</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#conf-py-erganzen">conf.py ergänzen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-make_doku/Myst">Myst-Knoff-Hoff</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#setup-installation">Setup/Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#sphinx-autodoc2">sphinx-autodoc2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#wandle-rst-in-myst">Wandle rst in myst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#targets">Targets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#automatisch-erzeugen">Automatisch erzeugen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#suche-link-targets">Suche link-Targets:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#markdown-generell">Markdown generell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#vs-code">VS-Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">knoffhoff</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">knoffhoff 1.0 Dokumentation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="know-how">
+<h1>Know-How<a class="headerlink" href="#know-how" title="Link to this heading"></a></h1>
+<p>Hier kommen zu merkende Dinge zum Thema programmieren rein, die man überall abrufen kann.</p>
+<div class="toctree-wrapper compound">
+<span id="document-git/helpgit"></span><section id="git">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Git</a><a class="headerlink" href="#git" title="Link to this heading"></a></h2>
+<nav class="contents" id="inhalt">
+<p class="topic-title">Inhalt</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#git" id="id1">Git</a></p>
+<ul>
+<li><p><a class="reference internal" href="#neuanlage" id="id2">Neuanlage</a></p></li>
+<li><p><a class="reference internal" href="#neuen-branch-downloaden" id="id3">Neuen branch downloaden</a></p></li>
+<li><p><a class="reference internal" href="#entferne-files-untrack" id="id4">Entferne Files (untrack)</a></p></li>
+<li><p><a class="reference internal" href="#committs-zeigen" id="id5">Committs zeigen</a></p></li>
+<li><p><a class="reference internal" href="#tags" id="id6">Tags</a></p>
+<ul>
+<li><p><a class="reference internal" href="#anlegen" id="id7">anlegen</a></p></li>
+<li><p><a class="reference internal" href="#suchen" id="id8">suchen</a></p></li>
+<li><p><a class="reference internal" href="#auf-remote-schieben" id="id9">auf Remote schieben</a></p></li>
+<li><p><a class="reference internal" href="#von-remote-loeschen" id="id10">von remote loeschen</a></p></li>
+<li><p><a class="reference internal" href="#in-neuen-branch-auschecken" id="id11">in neuen branch auschecken</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#remotes" id="id12">Remotes</a></p></li>
+<li><p><a class="reference internal" href="#history-loschen" id="id13">History löschen</a></p></li>
+<li><p><a class="reference internal" href="#einzel-file-downloaden" id="id14">Einzel-File downloaden</a></p></li>
+<li><p><a class="reference internal" href="#commits-aus-history-entfernen" id="id15">Commits aus History entfernen</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="neuanlage">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Neuanlage</a><a class="headerlink" href="#neuanlage" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>.gitignore erzeugen</p></li>
+<li><p>Lege lokales repos an
+Über vscode/source control +</p></li>
+<li><p>Verbindug zum remote-repo erzeugen mit<br />
+git remote add GartenRaspi https://github.com/KlausEtscheidt/GartenRaspi<br />
+(ersetze GartenRaspi)</p></li>
+<li><p>Files vom remote laden
+git pull GartenRaspi master</p></li>
+<li><p>Alle files stagen und committen</p></li>
+<li><p>Alles files hochladen
+git push GartenRaspi master (oder pussh -u ???)<br />
+git fetch GartenRaspi (aktuelle Info ueber remote holen, sonst letzter commit lokal unbekannt)</p></li>
+<li><p>Check ob synchron
+git status
+git log</p></li>
+</ol>
+<p>Wenn Inhalt auf client und server schon unterschiedlich vorhanden runterladen mit –allow-unrelated-histories<br />
+git pull –allow-unrelated-histories GartenRaspi master</p>
+</section>
+<section id="neuen-branch-downloaden">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Neuen branch downloaden</a><a class="headerlink" href="#neuen-branch-downloaden" title="Link to this heading"></a></h3>
+<p>git fetch macht alle branches lokal bekannt<br />
+dann git checkout to<br />
+git branch name :erzeugt neuen lokalen branch<br />
+git branch -vv: detail info ueber alle branches</p>
+</section>
+<section id="entferne-files-untrack">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Entferne Files (untrack)</a><a class="headerlink" href="#entferne-files-untrack" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Alle anzeigen
+git ls-files</p></li>
+<li><p>Entferne aus repo
+git rm –cache filename</p></li>
+<li><p>Kontrolle
+git status zeigt file als staged und deleted; ls-files zeigt file nicht mehr</p></li>
+<li><p>Commit und pull</p></li>
+<li><p>Ignorierte anzeigen
+git ls-files –others –ignored –exclude-standard</p></li>
+</ol>
+</section>
+<section id="committs-zeigen">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Committs zeigen</a><a class="headerlink" href="#committs-zeigen" title="Link to this heading"></a></h3>
+<p>git log –pretty=oneline
+oder
+git log</p>
+</section>
+<section id="tags">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Tags</a><a class="headerlink" href="#tags" title="Link to this heading"></a></h3>
+<section id="anlegen">
+<h4><a class="toc-backref" href="#id7" role="doc-backlink">anlegen</a><a class="headerlink" href="#anlegen" title="Link to this heading"></a></h4>
+<p>git tag vx.x (oder commit-id anhaengen =&gt; alter Stand wird getaged)</p>
+</section>
+<section id="suchen">
+<h4><a class="toc-backref" href="#id8" role="doc-backlink">suchen</a><a class="headerlink" href="#suchen" title="Link to this heading"></a></h4>
+<p>git tag -l v1.*</p>
+</section>
+<section id="auf-remote-schieben">
+<h4><a class="toc-backref" href="#id9" role="doc-backlink">auf Remote schieben</a><a class="headerlink" href="#auf-remote-schieben" title="Link to this heading"></a></h4>
+<p>git push GartenGui –tags</p>
+</section>
+<section id="von-remote-loeschen">
+<h4><a class="toc-backref" href="#id10" role="doc-backlink">von remote loeschen</a><a class="headerlink" href="#von-remote-loeschen" title="Link to this heading"></a></h4>
+<p>git push –delete GartenRaspi v3.3.01</p>
+</section>
+<section id="in-neuen-branch-auschecken">
+<h4><a class="toc-backref" href="#id11" role="doc-backlink">in neuen branch auschecken</a><a class="headerlink" href="#in-neuen-branch-auschecken" title="Link to this heading"></a></h4>
+<p>git checkout -b neuerBranch v2.0.0</p>
+</section>
+</section>
+<section id="remotes">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Remotes</a><a class="headerlink" href="#remotes" title="Link to this heading"></a></h3>
+<p>git remote -v (anzeigen)<br />
+git remote show name (details anzeigen)<br />
+git remote rename alter_name neuer_name (umbenennen)</p>
+</section>
+<section id="history-loschen">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">History löschen</a><a class="headerlink" href="#history-loschen" title="Link to this heading"></a></h3>
+<p>https://tecadmin.net/delete-commit-history-in-github/</p>
+</section>
+<section id="einzel-file-downloaden">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Einzel-File downloaden</a><a class="headerlink" href="#einzel-file-downloaden" title="Link to this heading"></a></h3>
+<p>git show HEAD~4:findsocket.sh &gt; tmp_findsocket.sh<br />
+mit HEAD~4 als treeish (commit id) 4 commits zurück<br />
+und findsocket.sh Datei zum downloaden<br />
+Achtung im Befehl oben steht im MD-Text HEAD\~4: da die Tilde sonst zum Format durchstreichen führt</p>
+</section>
+<section id="commits-aus-history-entfernen">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Commits aus History entfernen</a><a class="headerlink" href="#commits-aus-history-entfernen" title="Link to this heading"></a></h3>
+<p>Commits, die behalten werden sollen, werden in neuen branch geschoben</p>
+<ol class="arabic simple">
+<li><p>Erzeuge neuen branch (‚dummy‘) aus letztem Commit (‚$last‘), der behalten werden soll
+git branch dummy $last</p></li>
+<li><p>$destination ist Ziel branch $first der erste committ der behalten wird
+Die commits $first bis $last  sitzen jetzt auf $destination (werden angewandt)
+dummy hat Stand von $last
+Achte auf ^ hinter $first
+git rebase -p –onto $destination $first^ dummy</p></li>
+<li><p>Kontrolle
+gitk –all –date-order</p></li>
+<li><p>Checkout $destination und bringe auf Stand von dummy (entspricht $last)
+git checkout $destination
+git reset –hard dummy</p></li>
+<li><p>lösche dummy
+git branch -d dummy</p></li>
+<li><p>lösche commits aus Quellbranch $source
+git rebase -p –onto $first^ $last $source</p></li>
+</ol>
+</section>
+</section>
+<span id="document-python/python"></span><section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<span id="document-python/Install"></span><section id="pakete-erzeugen">
+<h3>Pakete erzeugen<a class="headerlink" href="#pakete-erzeugen" title="Link to this heading"></a></h3>
+<section id="aus-sourcen-zum-testen">
+<h4>Aus sourcen zum Testen<a class="headerlink" href="#aus-sourcen-zum-testen" title="Link to this heading"></a></h4>
+<p>pip install -e .
+im Verzeichnis das ./src enthält</p>
+</section>
+<section id="aus-lokaler-wheel">
+<h4>Aus lokaler wheel<a class="headerlink" href="#aus-lokaler-wheel" title="Link to this heading"></a></h4>
+<p>pip install –force-reinstall dist\checkweb-1.2.0-py3-none-any.whl</p>
+</section>
+<section id="wheel-erzeugen">
+<h4>wheel erzeugen<a class="headerlink" href="#wheel-erzeugen" title="Link to this heading"></a></h4>
+<p>python -m build
+im Verzeichnis das ./src enthält
+copy dist/checkweb-1.2.0-py3-none-any.whl e:\</p>
+</section>
+<section id="anleitung-unter">
+<h4>Anleitung unter<a class="headerlink" href="#anleitung-unter" title="Link to this heading"></a></h4>
+<p>https://packaging.python.org/tutorials/packaging-projects/</p>
+</section>
+</section>
+</div>
+<section id="error-handling">
+<h3>Error-Handling<a class="headerlink" href="#error-handling" title="Link to this heading"></a></h3>
+</section>
+</section>
+<span id="document-python/pip"></span><section id="pip">
+<h2>pip<a class="headerlink" href="#pip" title="Link to this heading"></a></h2>
+<dl class="simple myst">
+<dt><strong>pip check</strong></dt><dd><p>Zeigt alle Probleme</p>
+</dd>
+<dt><strong>pip list</strong></dt><dd><p>zeigt alle installierten Pakete</p>
+</dd>
+<dt><strong>pip show paket</strong></dt><dd><p>zeigt abhängigkeiten</p>
+</dd>
+<dt><strong>pip install</strong> „paket&lt;0.4.0,&gt;=0.2.7“</dt><dd><p>Installiert spez Versionen</p>
+</dd>
+</dl>
+</section>
+<span id="document-make_doku/sphinx_index"></span><section id="sphinx-dokus">
+<h2>Sphinx-Dokus<a class="headerlink" href="#sphinx-dokus" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<span id="document-make_doku/sphinx_setup"></span><section id="sphinx-projekt-einrichten">
+<h3>Sphinx Projekt einrichten<a class="headerlink" href="#sphinx-projekt-einrichten" title="Link to this heading"></a></h3>
+<section id="automatisches-anlegen">
+<h4>automatisches Anlegen<a class="headerlink" href="#automatisches-anlegen" title="Link to this heading"></a></h4>
+<p>Halbautomatisches Anlegen der Projektstruktur für ein Python-Paket.</p>
+<ol class="arabic simple">
+<li><p>Verzeichnis anlegen</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">    mkdir doku</span>
+<span class="go">    cd doku</span>
+<span class="go">    sphinx-quickstart</span>
+</pre></div>
+</div>
+<p>Legt im Verzeichnis <code class="docutils literal notranslate"><span class="pre">doku</span></code> die nötigen Unterverzeichnisse und eine <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> an.</p>
+<ol class="arabic simple" start="2">
+<li><p>Verzeichnis füllen</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">  sphinx-apidoc -o doku  -f -e -a -A &quot;Klaus Etscheidt&quot; -H checkweb .\src</span>
+</pre></div>
+</div>
+<p>Legt wird eine komplette Struktur inkl conf.py an.\ 
+Diese evtl nicht verwenden, da ungeeignet!</p>
+<p><code class="docutils literal notranslate"><span class="pre">.\src</span></code> zeigt auf das Unterverz src des Paketes, in dem die Python-Sourcen liegen. Es wird auch <strong>init</strong>.py gelesen und integriert.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sphinx-apidoc -o doku -e .\src</span>
+</pre></div>
+</div>
+<p>Erzeugt nur rst-Dateien.</p>
+</section>
+<section id="manuelles-anlegen">
+<h4>manuelles Anlegen<a class="headerlink" href="#manuelles-anlegen" title="Link to this heading"></a></h4>
+<p>Manuelles Anlegen der Projektstruktur für ein Python-Projekt oder eine beliebige andere Doku.</p>
+<p>Verzeichnis anlegen, wie oben und conf.py von geeigneter Vorlage kopieren.</p>
+</section>
+<section id="skripte-fur-ausgabe">
+<h4>Skripte für Ausgabe<a class="headerlink" href="#skripte-fur-ausgabe" title="Link to this heading"></a></h4>
+<p>Mit</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sphinx-build [options] &lt;sourcedir&gt; &lt;outputdir&gt;</span>
+</pre></div>
+</div>
+<p>werden aus den *.rst / *.md-Eingabedateien die Ausgaben erzeugt.<br />
+&lt;sourcedir&gt; ist dabei der Top-Knoten der Eingabedateien in dem auch conf.py steht.<br />
+Die Ausgaben landen in &lt;outputdir&gt;.</p>
+<p>Zur einfacheren Bearbeitung gibt es zwei Powershell-Skripte zum Erzeugen
+eines kompilierten Helpfiles (Htmlhelp *.chm) bzw. einer Html-Ausgabe.</p>
+<section id="makeall-chm-ps">
+<h5>makeall_chm.ps<a class="headerlink" href="#makeall-chm-ps" title="Link to this heading"></a></h5>
+<p>Erzeugt zunächst die Html-Ausgaben.
+Der Name der Dateien wird in conf.py über <code class="docutils literal notranslate"><span class="pre">htmlhelp_basename</span></code> definiert.
+Es entsteht eine entsprechende *.hhp-Datei, die von dem Skript über hhc.exe
+in die *.chm-Datei kompiliert wird.</p>
+<p>Das Skript prüft ob die chm-Datei aktuell angezeigt wird und stoppt den zugehörigen Prozess.</p>
+<p>Wenn dieser beendet ist, wird die chm-Datei ins source-Verzeichnis verschoben
+und angezeigt.</p>
+</section>
+<section id="makeall-singlehtml-ps1">
+<h5>makeall_singlehtml.ps1<a class="headerlink" href="#makeall-singlehtml-ps1" title="Link to this heading"></a></h5>
+<p>Erzeugt ebenfalls die Html-Ausgaben und zeigt sie an.</p>
+</section>
+</section>
+<section id="conf-py-erganzen">
+<h4>conf.py ergänzen<a class="headerlink" href="#conf-py-erganzen" title="Link to this heading"></a></h4>
+<p>Damit die Python-Projketdateien gefunden werden, am Anfang sys.path erweitern.<br />
+Dies ist nur für autodoc-Projekte nötig.<br />
+Hier wird das Verzeichnis FotoAlbum in den Suchpfad eingefügt:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="c1"># If extensions (or modules to document with autodoc) are in another directory,</span>
+   <span class="c1"># add these directories to sys.path here. If the directory is relative to the</span>
+   <span class="c1"># documentation root, use os.path.abspath to make it absolute, like shown here.</span>
+   <span class="c1">#</span>
+   <span class="kn">import</span> <span class="nn">os</span>
+   <span class="kn">import</span> <span class="nn">sys</span>
+   <span class="c1"># Hier liegt das Python-Basis-Verz FotoAlbum drei Ebenen über conf.py</span>
+   <span class="n">my_dir</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;..&#39;</span><span class="p">,</span><span class="s1">&#39;..&#39;</span><span class="p">,</span><span class="s1">&#39;..&#39;</span><span class="p">,</span><span class="s1">&#39;FotoAlbum&#39;</span><span class="p">))</span>
+   <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">my_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Allgemeines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;knoffhoff&#39;</span>
+   <span class="n">copyright</span> <span class="o">=</span> <span class="s1">&#39;2024, Klaus Etscheidt&#39;</span>
+   <span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;Klaus Etscheidt&#39;</span>
+   <span class="n">release</span> <span class="o">=</span> <span class="s1">&#39;1.0&#39;</span>
+   <span class="c1"># root_doc = &#39;Readme&#39;  macht Probleme root muss immer index heißen</span>
+   <span class="n">htmlhelp_basename</span> <span class="o">=</span> <span class="n">project</span>
+</pre></div>
+</div>
+<p>Sphinx Extensions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span> <span class="s1">&#39;sphinx.ext.coverage&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;sphinx.ext.napoleon&#39;</span><span class="p">,</span> <span class="s1">&#39;sphinx.ext.todo&#39;</span><span class="p">,</span> <span class="s1">&#39;myst_parser&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Sonstiges:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="c1"># Die Docstrings der Klasse und der init-Methode werden verwendet.</span>
+   <span class="n">autoclass_content</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span>
+
+   <span class="c1"># Die Einträge werden wie im Source-Code angeordnet</span>
+   <span class="n">autodoc_member_order</span> <span class="o">=</span> <span class="s1">&#39;bysource&#39;</span>
+   <span class="c1"># Keine Vererbung von Docstrings</span>
+   <span class="n">autodoc_inherit_docstrings</span> <span class="o">=</span> <span class="kc">False</span>
+
+   <span class="c1"># ???</span>
+   <span class="n">napoleon_use_param</span> <span class="o">=</span> <span class="kc">True</span>
+
+   <span class="c1"># Aut. Erzeugen von Ankern bei Überschriften bis level 7</span>
+   <span class="n">myst_heading_anchors</span> <span class="o">=</span> <span class="mi">7</span>
+   <span class="c1"># Myst extension</span>
+   <span class="n">myst_enable_extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;deflist&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<span id="document-make_doku/Myst"></span><section id="myst-knoff-hoff">
+<h3>Myst-Knoff-Hoff<a class="headerlink" href="#myst-knoff-hoff" title="Link to this heading"></a></h3>
+<p>https://myst-parser.readthedocs.io/en/latest/intro.html</p>
+<section id="setup-installation">
+<h4>Setup/Installation<a class="headerlink" href="#setup-installation" title="Link to this heading"></a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>myst-parser
+</pre></div>
+</div>
+<p>in conf.py eintragen:
+extensions = [„myst_parser“]</p>
+<section id="sphinx-autodoc2">
+<h5>sphinx-autodoc2<a class="headerlink" href="#sphinx-autodoc2" title="Link to this heading"></a></h5>
+<p>funzt nicht</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sphinx-autodoc2
+</pre></div>
+</div>
+<p>Eintrag in conf.py extensions = [„autodoc2“,]</p>
+</section>
+</section>
+<section id="wandle-rst-in-myst">
+<h4>Wandle rst in myst<a class="headerlink" href="#wandle-rst-in-myst" title="Link to this heading"></a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;rst-to-myst[sphinx]&quot;</span>
+rst2myst<span class="w"> </span>convert<span class="w"> </span>docs/**/*.rst
+</pre></div>
+</div>
+<p>s. https://rst-to-myst.readthedocs.io/en/stable/index.html</p>
+</section>
+<section id="targets">
+<h4>Targets<a class="headerlink" href="#targets" title="Link to this heading"></a></h4>
+<p>https://myst-parser.readthedocs.io/en/latest/syntax/cross-referencing.html</p>
+<section id="automatisch-erzeugen">
+<h5>Automatisch erzeugen<a class="headerlink" href="#automatisch-erzeugen" title="Link to this heading"></a></h5>
+<p>myst_heading_anchors = 2 in conf.py einfügen</p>
+<p>s. https://myst-parser.readthedocs.io/en/v0.13.7/using/howto.html</p>
+<p>Referenzen gehen anscheinend nur mit der Syntax <a class="reference internal" href="#automatisch-erzeugen">meinText</a>, wenn <code class="docutils literal notranslate"><span class="pre">automatisch-erzeugen</span></code> die target-id ist:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span> [<span class="nt">meinText</span>](<span class="na">#automatisch-erzeugen</span>)
+</pre></div>
+</div>
+</section>
+<section id="suche-link-targets">
+<h5>Suche link-Targets:<a class="headerlink" href="#suche-link-targets" title="Link to this heading"></a></h5>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">myst-anchors -l 2 meine.md</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="markdown-generell">
+<h4>Markdown generell<a class="headerlink" href="#markdown-generell" title="Link to this heading"></a></h4>
+<section id="vs-code">
+<h5>VS-Code<a class="headerlink" href="#vs-code" title="Link to this heading"></a></h5>
+<p>s. https://code.visualstudio.com/docs/languages/markdown</p>
+<p>To switch between views, press <strong>Ctrl+Shift+V</strong> in the editor.</p>
+<p>You can view the preview side-by-side <strong>(Ctrl+K V)</strong> with the file you are editing and see changes reflected in real-time as you edit.</p>
+</section>
+</section>
+</section>
+</div>
+</section>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Klaus Etscheidt.</p>
+  </div>
+
+  Erstellt mit <a href="https://www.sphinx-doc.org/">Sphinx</a> mit einem
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    bereitgestellt von <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

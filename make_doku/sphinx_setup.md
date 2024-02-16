@@ -65,7 +65,9 @@ Erzeugt ebenfalls die Html-Ausgaben und zeigt sie an.
 
 ## conf.py ergänzen
 
-Damit die Projketdateien gefunden werden am Anfang dazu:
+Damit die Python-Projketdateien gefunden werden, am Anfang sys.path erweitern.\
+Dies ist nur für autodoc-Projekte nötig.\
+Hier wird das Verzeichnis FotoAlbum in den Suchpfad eingefügt:
  
  ```{code-block} python
     # If extensions (or modules to document with autodoc) are in another directory,
@@ -78,7 +80,6 @@ Damit die Projketdateien gefunden werden am Anfang dazu:
     my_dir=os.path.abspath(os.path.join('.','..','..','..','FotoAlbum'))
     sys.path.append(my_dir)
 ```
-Hiermit wurde das Verzeichnis FotoAlbum in den Suchpfad eingefügt.
 
 Allgemeines:
 

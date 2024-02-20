@@ -17,13 +17,42 @@ pip install sphinx-autodoc2
 ```
 Eintrag in conf.py extensions = ["autodoc2",]
 
-## Wandle rst in myst
+### Wandle rst in myst
 
 ```shell
 pip install "rst-to-myst[sphinx]"
 rst2myst convert docs/**/*.rst
 ```
 s. https://rst-to-myst.readthedocs.io/en/stable/index.html
+
+## Code-Blocks
+
+````md
+```python
+def myfunc():
+    x = 5
+```
+````
+ wird zu
+
+```python
+def myfunc():
+    x = 5
+```
+
+Inline Python code 
+```md
+`a = "b"`{l=python}
+```
+wird zu `a = "b"`{l=python}
+
+Sprachcodes (s. https://pygments.org/docs/lexers/#pygments.lexers.shell.BatchLexer):
+
+    - python
+    - ps1
+    - doscon
+    - md
+
 
 ## Targets
 

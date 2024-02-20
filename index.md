@@ -8,6 +8,7 @@ git/helpgit
 python/python
 python/pip
 make_doku/sphinx_index
+vscode/vsc_index
 ```
 
 

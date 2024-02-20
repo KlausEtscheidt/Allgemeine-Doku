@@ -88,6 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#code-blocks">Code-Blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#include">Include</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#targets">Targets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="index.html#automatisch-erzeugen">Automatisch erzeugen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="index.html#suche-link-targets">Suche link-Targets:</a></li>
@@ -101,6 +102,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-make_doku/Dokstrings">Dokstrings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-make_doku/gitpage">Upload nach Github</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-vscode/vsc_index">VS-Code Knoff-Hoff</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#tasks">Tasks</a></li>
 </ul>
 </li>
 </ul>
@@ -300,7 +305,7 @@ copy dist/checkweb-1.2.0-py3-none-any.whl e:\</p>
 </div>
 <section id="error-handling">
 <h3>Error-Handling<a class="headerlink" href="#error-handling" title="Link to this heading"></a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## @package socket_client</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## @package socket_client</span>
 <span class="c1"># Senden von Befehlen an den Bus-Master per socket</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">traceback</span>
@@ -560,6 +565,14 @@ rst2myst<span class="w"> </span>convert<span class="w"> </span>docs/**/*.rst
 - ps1
 - doscon
 - md
+</pre></div>
+</div>
+</section>
+<section id="include">
+<h4>Include<a class="headerlink" href="#include" title="Link to this heading"></a></h4>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{literalinclude} err_test.py
+:language: pyton
+```
 </pre></div>
 </div>
 </section>
@@ -931,6 +944,60 @@ rst2myst<span class="w"> </span>convert<span class="w"> </span>docs/**/*.rst
 </ul>
 </section>
 </div>
+</section>
+<span id="document-vscode/vsc_index"></span><section id="vs-code-knoff-hoff">
+<h2>VS-Code Knoff-Hoff<a class="headerlink" href="#vs-code-knoff-hoff" title="Link to this heading"></a></h2>
+<section id="tasks">
+<h3>Tasks<a class="headerlink" href="#tasks" title="Link to this heading"></a></h3>
+<p>Terminal / Aufgabe ausführen / „Zahnrad“ öffnet tasks.json:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// See https://go.microsoft.com/fwlink/?LinkId=733558</span>
+<span class="w">    </span><span class="c1">// for the documentation about the tasks.json format</span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lint all&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shell&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;powershell&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-ExecutionPolicy&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;Unrestricted&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;-NoProfile&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;-File&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;${cwd}/lint_all.ps1&quot;</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;problemMatcher&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pylance&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ke&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;fileLocation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;relative&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">],</span>
+<span class="w">                    </span><span class="nt">&quot;pattern&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                      </span><span class="nt">&quot;regexp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^(.*):(\\d+):(\\d+):\\s+(.*):\\s+(.*)$&quot;</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">&quot;line&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">&quot;column&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Hier wurde das Powershell-Skript lint_all.ps1 eingebaut,
+welches pslint startet:</p>
+<div class="highlight-ps1 notranslate"><div class="highlight"><pre><span></span><span class="nv">$pyfiles</span> <span class="p">=</span>  <span class="nb">Get-ChildItem</span> <span class="n">-Filter</span> <span class="p">*.</span><span class="n">py</span>
+<span class="nb">Set-Location</span> <span class="nv">$PSScriptRoot</span>
+
+<span class="nv">$myargs</span> <span class="p">=</span> <span class="nv">$pyfiles</span>
+<span class="nv">$myargs</span> <span class="p">+=</span> <span class="s2">&quot;--extension-pkg-whitelist=wx&quot;</span>
+<span class="c">#$myargs += &quot;--msg-template=`&quot;{path}:{line}:{column}: {msg_id}: ({symbol}) {msg}`&quot;&quot;</span>
+<span class="c"># $myargs += &quot;--init-hook=`&quot;import sys; sys.path=[r&#39;&quot; + C:\Users\Klaus\Documents\_m\FotoAlbum + &quot;&#39;]+sys.path`&quot; &quot;</span>
+<span class="nv">$myargs</span> <span class="p">+=</span> <span class="s2">&quot;--init-hook=</span><span class="se">`&quot;</span><span class="s2">import sys; sys.path=[r&#39;&quot;</span> <span class="p">+</span> <span class="nv">$PSScriptRoot</span> <span class="p">+</span> <span class="s2">&quot;&#39;]+sys.path</span><span class="se">`&quot;</span><span class="s2"> &quot;</span>
+<span class="nb">Start-Process</span> <span class="n">-FilePath</span> <span class="s2">&quot;pylint&quot;</span> <span class="n">-ArgumentList</span> <span class="nv">$myargs</span> <span class="n">-Wait</span> <span class="n">-NoNewWindow</span>
+</pre></div>
+</div>
+<p>Der problemmatcher-Abschnitt in der task filtert die Ausgabe von pylint
+und überträgt sie in die vs-code „PROBLEME“</p>
+</section>
 </section>
 </div>
 </section>

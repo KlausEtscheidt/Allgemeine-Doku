@@ -53,8 +53,7 @@ html_theme_options = {
 napoleon_use_param = True
 
 myst_heading_anchors = 6
-myst_enable_extensions = ["deflist","attrs_inline"]
-
+myst_enable_extensions = ["deflist", "attrs_inline", "colon_fence"]
 # def change(app, what, name, obj, options, lines):
 #     print(lines)
 #     #name += '#######'

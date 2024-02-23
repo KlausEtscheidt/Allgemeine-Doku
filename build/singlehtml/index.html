@@ -87,8 +87,14 @@
 <li class="toctree-l4"><a class="reference internal" href="index.html#wandle-rst-in-myst">Wandle rst in myst</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#direktiven">direktiven</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#roles">roles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#gui-buttons-etc">GUI-Buttons etc</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#code-blocks">Code-Blocks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#include">Include</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#bilder">Bilder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#targets">Targets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="index.html#automatisch-erzeugen">Automatisch erzeugen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="index.html#suche-link-targets">Suche link-Targets:</a></li>
@@ -371,9 +377,6 @@ copy dist/checkweb-1.2.0-py3-none-any.whl e:\</p>
 <div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>python -m http.server 9000
 </pre></div>
 </div>
-<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="go">python -m http.server 9000</span>
-</pre></div>
-</div>
 </section>
 </section>
 <span id="document-python/pip"></span><section id="pip">
@@ -542,12 +545,54 @@ rst2myst<span class="w"> </span>convert<span class="w"> </span>docs/**/*.rst
 <p>s. https://rst-to-myst.readthedocs.io/en/stable/index.html</p>
 </section>
 </section>
+<section id="direktiven">
+<h4>direktiven<a class="headerlink" href="#direktiven" title="Link to this heading"></a></h4>
+<p>Myth-Stil:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{note}
+Achtung
+```
+</pre></div>
+</div>
+<p>oder klassisch:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>:::{note}
+Achtung
+:::
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Achtung</p>
+</div>
+<p>ergibt:</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Achtung</p>
+</div>
+</section>
+<section id="roles">
+<h4>roles<a class="headerlink" href="#roles" title="Link to this heading"></a></h4>
+<p>Sphinx :rolle: wird zu {rolle}</p>
+<section id="gui-buttons-etc">
+<h5>GUI-Buttons etc<a class="headerlink" href="#gui-buttons-etc" title="Link to this heading"></a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{guilabel}`meinbutton`
+</pre></div>
+</div>
+<p><span class="guilabel">meinbutton</span></p>
+</section>
+</section>
 <section id="code-blocks">
 <h4>Code-Blocks<a class="headerlink" href="#code-blocks" title="Link to this heading"></a></h4>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="sb">```python</span>
 <span class="k">def</span> <span class="nf">myfunc</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="sb">```</span>
+
+oder
+
+:::{code-block} python
+def myfunc():
+    x = 5
+:::
 </pre></div>
 </div>
 <p>wird zu</p>
@@ -565,6 +610,7 @@ rst2myst<span class="w"> </span>convert<span class="w"> </span>docs/**/*.rst
 - ps1
 - doscon
 - md
+- vbnet
 </pre></div>
 </div>
 </section>
@@ -573,6 +619,17 @@ rst2myst<span class="w"> </span>convert<span class="w"> </span>docs/**/*.rst
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{literalinclude} err_test.py
 :language: pyton
 ```
+</pre></div>
+</div>
+</section>
+<section id="bilder">
+<h4>Bilder<a class="headerlink" href="#bilder" title="Link to this heading"></a></h4>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>    ```{image} github.png
+    :alt: fishy
+    :class: bg-primary
+    :width: 500px
+    :align: center
+    ```
 </pre></div>
 </div>
 </section>

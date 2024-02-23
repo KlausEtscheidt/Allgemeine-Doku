@@ -7,6 +7,7 @@ https://myst-parser.readthedocs.io/en/latest/intro.html
 ```shell
 pip install myst-parser
 ```
+
 in conf.py eintragen:
 extensions = ["myst_parser"]
 
@@ -25,13 +26,59 @@ rst2myst convert docs/**/*.rst
 ```
 s. https://rst-to-myst.readthedocs.io/en/stable/index.html
 
+## direktiven
+
+Myth-Stil:
+````md
+```{note}
+Achtung
+```
+````
+
+oder klassisch:
+
+````md
+:::{note}
+Achtung
+:::
+````
+
+:::{note}
+Achtung
+:::
+
+
+ergibt:
+
+```{note}
+Achtung
+```
+
+## roles
+Sphinx :rolle: wird zu {rolle}
+
+### GUI-Buttons etc
+:::{code}
+{guilabel}`meinbutton`
+:::
+{guilabel}`meinbutton`
+
 ## Code-Blocks
+
 
 ````md
 ```python
 def myfunc():
     x = 5
 ```
+
+oder
+
+:::{code-block} python
+def myfunc():
+    x = 5
+:::
+
 ````
  wird zu
 
@@ -52,12 +99,23 @@ Sprachcodes (s. https://pygments.org/docs/lexers/#pygments.lexers.shell.BatchLex
     - ps1
     - doscon
     - md
+    - vbnet
 
 ## Include
 ````md
 ```{literalinclude} err_test.py
 :language: pyton
 ```
+````
+
+## Bilder
+````md
+    ```{image} github.png
+    :alt: fishy
+    :class: bg-primary
+    :width: 500px
+    :align: center
+    ```
 ````
 
 ## Targets

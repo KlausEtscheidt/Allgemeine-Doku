@@ -28,6 +28,14 @@ s. https://rst-to-myst.readthedocs.io/en/stable/index.html
 
 ## direktiven
 
+rst-Format:
+
+```
+.. note::
+
+Achtung
+```
+
 Myth-Stil:
 ````md
 ```{note}
@@ -53,6 +61,8 @@ ergibt:
 ```{note}
 Achtung
 ```
+
+### Software-Modul
 
 ## roles
 Sphinx :rolle: wird zu {rolle}
@@ -110,29 +120,58 @@ Sprachcodes (s. https://pygments.org/docs/lexers/#pygments.lexers.shell.BatchLex
 
 ## Bilder
 ````md
-    ```{image} github.png
-    :alt: fishy
-    :class: bg-primary
-    :width: 500px
-    :align: center
-    ```
+```{image} github.png
+:alt: fishy
+:class: bg-primary
+:width: 500px
+:align: center
+```
 ````
 
-## Targets
+## Links + Targets
 
 https://myst-parser.readthedocs.io/en/latest/syntax/cross-referencing.html
 
-### Automatisch erzeugen
+### links
+#### Externe (lokale) Files
+
+:::{Attention}
+Absolute Pfade in Myst sind absolut zum Projektverzeichnis und nicht zum Filesystem !!
+
+Links gehen nur mit Hmtl:
+
+```md
+<a href = "file:///V:/Tools/Excel%20Makros/doku/Benutzer_Anleitung%20Ersatz_Auftragsverfolgung.pdf"> link </a>
+```
+:::
+
+#### Links zu anderen md-files
+```md
+ [](./Komponenten.md#software-komponenten)
+```
+linkt zum Anker *software-komponenten* der Datei *Komponenten.md*.
+
+#### Links zu Software-Doku
+
+```md
+[](#Auftragsposition.Init)
+```
+
+linkt zur Beschreibung der *Init*-Methode der Klasse *Auftragsposition*.\
+Evtl muss auch noch ein Modulname vorangestellt werden.
+
+### Targets
+#### Targets automatisch erzeugen
 myst_heading_anchors = 2 in conf.py einfügen
 
 s. https://myst-parser.readthedocs.io/en/v0.13.7/using/howto.html
 
-Referenzen gehen anscheinend nur mit der Syntax [meinText](#automatisch-erzeugen), wenn `automatisch-erzeugen` die target-id ist:
+Referenzen gehen anscheinend nur mit der Syntax [meinText](#targets-automatisch-erzeugen), wenn `targets-automatisch-erzeugen` die target-id ist:
 ```md
- [meinText](#automatisch-erzeugen)
+ [meinText](#targets-automatisch-erzeugen)
 ```
 
-### Suche link-Targets:
+#### Suche link-Targets:
 ```console
 myst-anchors -l 2 meine.md
 ```

@@ -87,7 +87,10 @@
 <li class="toctree-l4"><a class="reference internal" href="index.html#wandle-rst-in-myst">Wandle rst in myst</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#direktiven">direktiven</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#direktiven">direktiven</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#software-modul">Software-Modul</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#roles">roles</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="index.html#gui-buttons-etc">GUI-Buttons etc</a></li>
 </ul>
@@ -95,9 +98,9 @@
 <li class="toctree-l3"><a class="reference internal" href="index.html#code-blocks">Code-Blocks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#include">Include</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#bilder">Bilder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#targets">Targets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="index.html#automatisch-erzeugen">Automatisch erzeugen</a></li>
-<li class="toctree-l4"><a class="reference internal" href="index.html#suche-link-targets">Suche link-Targets:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#links-targets">Links + Targets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#links">links</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#targets">Targets</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#markdown-generell">Markdown generell</a><ul>
@@ -547,6 +550,12 @@ rst2myst<span class="w"> </span>convert<span class="w"> </span>docs/**/*.rst
 </section>
 <section id="direktiven">
 <h4>direktiven<a class="headerlink" href="#direktiven" title="Link to this heading"></a></h4>
+<p>rst-Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">note</span><span class="p">::</span>
+
+<span class="n">Achtung</span>
+</pre></div>
+</div>
 <p>Myth-Stil:</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{note}
 Achtung
@@ -568,6 +577,9 @@ Achtung
 <p class="admonition-title">Bemerkung</p>
 <p>Achtung</p>
 </div>
+<section id="software-modul">
+<h5>Software-Modul<a class="headerlink" href="#software-modul" title="Link to this heading"></a></h5>
+</section>
 </section>
 <section id="roles">
 <h4>roles<a class="headerlink" href="#roles" title="Link to this heading"></a></h4>
@@ -624,32 +636,64 @@ def myfunc():
 </section>
 <section id="bilder">
 <h4>Bilder<a class="headerlink" href="#bilder" title="Link to this heading"></a></h4>
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>    ```{image} github.png
-    :alt: fishy
-    :class: bg-primary
-    :width: 500px
-    :align: center
-    ```
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{image} github.png
+:alt: fishy
+:class: bg-primary
+:width: 500px
+:align: center
+```
 </pre></div>
 </div>
 </section>
-<section id="targets">
-<h4>Targets<a class="headerlink" href="#targets" title="Link to this heading"></a></h4>
+<section id="links-targets">
+<h4>Links + Targets<a class="headerlink" href="#links-targets" title="Link to this heading"></a></h4>
 <p>https://myst-parser.readthedocs.io/en/latest/syntax/cross-referencing.html</p>
-<section id="automatisch-erzeugen">
-<h5>Automatisch erzeugen<a class="headerlink" href="#automatisch-erzeugen" title="Link to this heading"></a></h5>
+<section id="links">
+<h5>links<a class="headerlink" href="#links" title="Link to this heading"></a></h5>
+<section id="externe-lokale-files">
+<h6>Externe (lokale) Files<a class="headerlink" href="#externe-lokale-files" title="Link to this heading"></a></h6>
+<div class="admonition attention">
+<p class="admonition-title">Achtung</p>
+<p>Absolute Pfade in Myst sind absolut zum Projektverzeichnis und nicht zum Filesystem !!</p>
+<p>Links gehen nur mit Hmtl:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>&lt;a href = &quot;file:///V:/Tools/Excel%20Makros/doku/Benutzer_Anleitung%20Ersatz_Auftragsverfolgung.pdf&quot;&gt; link &lt;/a&gt;
+</pre></div>
+</div>
+</div>
+</section>
+<section id="links-zu-anderen-md-files">
+<h6>Links zu anderen md-files<a class="headerlink" href="#links-zu-anderen-md-files" title="Link to this heading"></a></h6>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span> [](./Komponenten.md#software-komponenten)
+</pre></div>
+</div>
+<p>linkt zum Anker <em>software-komponenten</em> der Datei <em>Komponenten.md</em>.</p>
+</section>
+<section id="links-zu-software-doku">
+<h6>Links zu Software-Doku<a class="headerlink" href="#links-zu-software-doku" title="Link to this heading"></a></h6>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>[](#Auftragsposition.Init)
+</pre></div>
+</div>
+<p>linkt zur Beschreibung der <em>Init</em>-Methode der Klasse <em>Auftragsposition</em>.<br />
+Evtl muss auch noch ein Modulname vorangestellt werden.</p>
+</section>
+</section>
+<section id="targets">
+<h5>Targets<a class="headerlink" href="#targets" title="Link to this heading"></a></h5>
+<section id="targets-automatisch-erzeugen">
+<h6>Targets automatisch erzeugen<a class="headerlink" href="#targets-automatisch-erzeugen" title="Link to this heading"></a></h6>
 <p>myst_heading_anchors = 2 in conf.py einfügen</p>
 <p>s. https://myst-parser.readthedocs.io/en/v0.13.7/using/howto.html</p>
-<p>Referenzen gehen anscheinend nur mit der Syntax <a class="reference internal" href="#automatisch-erzeugen">meinText</a>, wenn <code class="docutils literal notranslate"><span class="pre">automatisch-erzeugen</span></code> die target-id ist:</p>
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span> [<span class="nt">meinText</span>](<span class="na">#automatisch-erzeugen</span>)
+<p>Referenzen gehen anscheinend nur mit der Syntax <a class="reference internal" href="#targets-automatisch-erzeugen">meinText</a>, wenn <code class="docutils literal notranslate"><span class="pre">targets-automatisch-erzeugen</span></code> die target-id ist:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span> [<span class="nt">meinText</span>](<span class="na">#targets-automatisch-erzeugen</span>)
 </pre></div>
 </div>
 </section>
 <section id="suche-link-targets">
-<h5>Suche link-Targets:<a class="headerlink" href="#suche-link-targets" title="Link to this heading"></a></h5>
+<h6>Suche link-Targets:<a class="headerlink" href="#suche-link-targets" title="Link to this heading"></a></h6>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">myst-anchors -l 2 meine.md</span>
 </pre></div>
 </div>
+</section>
 </section>
 </section>
 <section id="markdown-generell">

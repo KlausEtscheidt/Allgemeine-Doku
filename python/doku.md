@@ -12,6 +12,7 @@ Mit folgendem Beispiel-Script **generateDok.py** wird eine Html-Doku aus den Dok
 ```{literalinclude} generateDok.py
 :language: python
 ```
+
 Das Script geht davon aus, das es direkt über dem src-Verzeichnis, also im Projekt-Verzeichnis steht.
 Könnte geändert werden, macht aber so Sinn (siehe Pakete erzeugen/Verzeichnisstruktur).
 

@@ -124,7 +124,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#document-make_doku/Dokstrings">Dokstrings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#document-make_doku/gitpage">Upload nach Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-make_doku/gitpage">Upload nach Github</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#document-make_doku/gitpage#update">Update</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#document-make_doku/markdown">Markdown generell</a><ul>
@@ -319,19 +322,19 @@ git rebase -p –onto $first^ $last $source</p></li>
 <section id="verzeichnis-struktur">
 <h4>Verzeichnis-Struktur<a class="headerlink" href="#verzeichnis-struktur" title="Link to this heading"></a></h4>
 <p>Zur Typerkennung mit mypy muss folgende Struktur entstehen:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Paketname    (Projekt- oder Paketverzeichnis)
-    |
-    |_generateDok.py   (optional: Erzeugt Doku mit pydoctor)
-    |_Readme.md        (optionale Beschreibung evtl für Github)
-    |_pyproject.toml   !!! wichtig: definiert das Paket für pip install
-    |_src              Verzeichnis mit Python-Code des Pakets
-        |
-        |_Paketname            Unter-Verzeichnis mit Python-Code des Pakets
-            |_Init.py          Kann leer sein, sollte besser Dok-String für Paket enthalten
-            |_modulname1.py    Python-Code für Modul modulname1 des Pakets
-            |_modulname2.py    Python-Code für Modul modulname2 des Pakets
-            |_py.typed         leere Datei. Zeigt mypy das die Module typisiert sind
-    |_apidoc            (Ausgabe von generatDok.py)
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Paketname    (Projekt- oder Paketverzeichnis)</span>
+<span class="go">    |</span>
+<span class="go">    |_generateDok.py   (optional: Erzeugt Doku mit pydoctor)</span>
+<span class="go">    |_Readme.md        (optionale Beschreibung evtl für Github)</span>
+<span class="go">    |_pyproject.toml   !!! wichtig: definiert das Paket für pip install</span>
+<span class="go">    |_src              Verzeichnis mit Python-Code des Pakets</span>
+<span class="go">        |</span>
+<span class="go">        |_Paketname            Unter-Verzeichnis mit Python-Code des Pakets</span>
+<span class="go">            |_Init.py          Kann leer sein, sollte besser Dok-String für Paket enthalten</span>
+<span class="go">            |_modulname1.py    Python-Code für Modul modulname1 des Pakets</span>
+<span class="go">            |_modulname2.py    Python-Code für Modul modulname2 des Pakets</span>
+<span class="go">            |_py.typed         leere Datei. Zeigt mypy das die Module typisiert sind</span>
+<span class="go">    |_apidoc            (Ausgabe von generatDok.py)</span>
 </pre></div>
 </div>
 <p>Damit mypy die Typen in den Modulen erkennt bzw. prüft muss die Datei <em>py.typed</em> ins Paketverzeichnis
@@ -341,16 +344,16 @@ un im <em>pyproject.toml</em> eingetragen werden.</p>
 <p>Es wird auf die Zwischeneben verzichtet.
 Scheint z.T. Probleme mit Typ-Checkern/Lintern zu machen, die fehlende Import bemängeln
 Import aber einfach mit <code class="code docutils literal highlight highlight-pathon">import modulename</code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Projektname    (Projekt- oder Paketverzeichnis)
-    |
-    |_generateDok.py   (optional: Erzeugt Doku mit pydoctor)
-    |_Readme.md        (optionale Beschreibung evtl für Github)
-    |_pyproject.toml   !!! wichtig: definiert das Paket für pip install
-    |_src              Verzeichnis mit Python-Code des Pakets
-        |
-        |_Init.py          Kann leer sein, sollte besser Dok-String für Paket enthalten
-        |_modulname.py    Python-Code für Modul modulname1 des Pakets
-    |_apidoc            (Ausgabe von generatDok.py)
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Projektname    (Projekt- oder Paketverzeichnis)</span>
+<span class="go">    |</span>
+<span class="go">    |_generateDok.py   (optional: Erzeugt Doku mit pydoctor)</span>
+<span class="go">    |_Readme.md        (optionale Beschreibung evtl für Github)</span>
+<span class="go">    |_pyproject.toml   !!! wichtig: definiert das Paket für pip install</span>
+<span class="go">    |_src              Verzeichnis mit Python-Code des Pakets</span>
+<span class="go">        |</span>
+<span class="go">        |_Init.py          Kann leer sein, sollte besser Dok-String für Paket enthalten</span>
+<span class="go">        |_modulname.py    Python-Code für Modul modulname1 des Pakets</span>
+<span class="go">    |_apidoc            (Ausgabe von generatDok.py)</span>
 </pre></div>
 </div>
 </section>
@@ -1288,6 +1291,14 @@ Evtl muss auch noch ein Modulname vorangestellt werden.</p>
 <p>path auf <code class="docutils literal notranslate"><span class="pre">./doku/build/singlehtml</span></code></p>
 </li>
 </ul>
+<p>Ergebnis unter</p>
+<p><a class="reference external" href="https://klausetscheidt.github.io/Allgemeine-Doku/">https://klausetscheidt.github.io/Allgemeine-Doku/</a></p>
+<p>Wenn Repo-Name „Allgemeine-Doku“</p>
+<section id="update">
+<h4>Update<a class="headerlink" href="#update" title="Link to this heading"></a></h4>
+<p>Neu mit Sphinx übersetzen (single html)
+committen</p>
+</section>
 </section>
 </div>
 </section>

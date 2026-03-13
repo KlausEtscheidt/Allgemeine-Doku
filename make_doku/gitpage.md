@@ -37,3 +37,8 @@ Ergebnis unter
 [https://klausetscheidt.github.io/Allgemeine-Doku/](https://klausetscheidt.github.io/Allgemeine-Doku/)
 
 Wenn Repo-Name "Allgemeine-Doku"
+
+## Update
+
+Neu mit Sphinx übersetzen (single html)
+committen

@@ -9,6 +9,7 @@
 - In Github Projekt Public machen
 
 - Unter settings pages (links) wählen
+
     ```{image} github.png
     :alt: fishy
     :class: bg-primary
@@ -21,10 +22,18 @@
 - Static html wählen
 
 - Im Fenster 'workflows/static.yml' ganz unten
+
     ```YAML
          uses: actions/upload-pages-artifact@v3
          with:
            # Upload entire repository
            path: '.'
     ```
+
     path auf `./doku/build/singlehtml`
+
+Ergebnis unter
+
+[https://klausetscheidt.github.io/Allgemeine-Doku/](https://klausetscheidt.github.io/Allgemeine-Doku/)
+
+Wenn Repo-Name "Allgemeine-Doku"

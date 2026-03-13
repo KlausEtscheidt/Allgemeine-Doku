@@ -3,7 +3,8 @@
 ## Verzeichnis-Struktur
 
 Zur Typerkennung mit mypy muss folgende Struktur entstehen:
-```
+
+```console
 Paketname    (Projekt- oder Paketverzeichnis)
     |
     |_generateDok.py   (optional: Erzeugt Doku mit pydoctor)
@@ -28,7 +29,7 @@ Es wird auf die Zwischeneben verzichtet.
 Scheint z.T. Probleme mit Typ-Checkern/Lintern zu machen, die fehlende Import bemängeln
 Import aber einfach mit `import modulename`{l=pathon}
 
-```
+```console
 Projektname    (Projekt- oder Paketverzeichnis)
     |
     |_generateDok.py   (optional: Erzeugt Doku mit pydoctor)
@@ -64,13 +65,16 @@ license = "GPL-3.0-or-later"
 ```
 
 Eintrag fuer mypy:
+
 ```toml
 [tool.setuptools.package-data]
 "KeCmdRunner" = ["py.typed"]
 ```
+
 Bewirkt anscheinend ?!? das die Datei py.typed mit ins Paket kommt.
 
 ## Pakete zur Weiterentwicklung lokal installieren
+
 im Vater-Verzeichnis von src (Projekt-Verzeichnis):
 
 `pip install -e .`{l=console}
@@ -83,11 +87,10 @@ im Vater-Verzeichnis von src (Projekt-Verzeichnis):
 `pip install --force-reinstall dist\name_des_paket_wheels.whl`{l=console}
 
 ### komplette Anleitung unter
+
 [https://packaging.python.org/tutorials/packaging-projects/](https://packaging.python.org/tutorials/packaging-projects/)
 
-
-Kontrolle mit Pip
------------------
+## Kontrolle mit Pip
 
 **pip list**
 : zeigt alle installierten Pakete
@@ -98,8 +101,7 @@ Kontrolle mit Pip
 **pip show -f kefritz**
 : zeigt files in Paket kefritz
 
-MyPy Typerkennung
------------------
+## MyPy Typerkennung
 
 Erfordert Eintrag
 [tool.setuptools.package-data]
@@ -107,8 +109,7 @@ Erfordert Eintrag
 
 in pyprojekt.toml und ausserdem eine leere Datei py.typed im Paketverzeichnis
 
-Benutzung
----------
+## Benutzung
 
 **Achtung**
 Wenn das Paket FfmpegService heißt, und die Datei darin FfmpegService.py
@@ -117,4 +118,3 @@ wird importiert mit:
 `import FfmpegService.FfmpegService as ffmpeg`{l=python}
 
 Mit dir(ffmpeg) kann geprüft werden, was im Modul bekannt ist.
-

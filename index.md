@@ -11,6 +11,3 @@ make_doku/sphinx_index
 make_doku/markdown
 vscode/vsc_index
 ```
-
-
-

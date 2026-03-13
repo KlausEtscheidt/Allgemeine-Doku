@@ -20,7 +20,6 @@ und überträgt sie in die vs-code "PROBLEME"
 
 ## Erweiterungen
 
-
 ### neue Erweiterung beginnen
 
 [siehe auch: https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)

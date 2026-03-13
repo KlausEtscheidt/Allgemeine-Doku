@@ -12,11 +12,13 @@ $builder = 'singlehtml'
 $sourcedir = '.'
 $outputdir = 'build'
 $myargs = @('-M', $builder, $sourcedir, $outputdir)
-# $myargs += '-E' # immer alle neu
+#$myargs += '-E' # immer alle neu
 Start-Process -FilePath $cmd $myargs  -Wait -NoNewWindow
+
+$null = Read-Host 'To continue press ENTER'
 
 # Html anzeigen
 
-$cmd = "C:\Program Files\Google\Chrome\Application\chrome.exe"
-$url = "$PSScriptRoot/build/singlehtml/index.html"
-Start-Process -FilePath $cmd $url
+#$cmd = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+#$url = "$PSScriptRoot/build/singlehtml/index.html"
+#Start-Process -FilePath $cmd $url

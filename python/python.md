@@ -2,6 +2,7 @@
 
 ```{toctree}
 Install
+doku
 ```
 
 ## Error-Handling

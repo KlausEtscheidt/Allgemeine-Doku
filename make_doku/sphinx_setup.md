@@ -29,11 +29,82 @@ sphinx-apidoc -o doku -e .\src
 ```
 Erzeugt nur rst-Dateien.
 
+Bei Projekten, die kein Paket darstellen, darf im Basisverzeichnis keine __init__.py sein.
+Sonst wird das Ganze als Modul interpretiert und die Dateien werden nicht gefunden.
+
+Der Befehl
+
+```console
+sphinx-apidoc -o doku -e .
+```
+wird dann im Basisverzeichnis (z.B. C:\Users\Klaus\Documents\_m\Fritztools\FritzMan) abgesetzt.
+
+### C-Projekte
+
+Wenn noch nicht erfolgt, mit
+
+```console
+pip install sphinx-c-autodoc
+```
+die Erweiterung für C-Projekte installieren.
+
+**!!! Achtung libclang** wird nicht mit installiert. Die zu
+LLVM gehörende ist anscheinend unbrauchbar. Daher:
+
+```console
+pip install libclang
+```
+
+Der Befehl zum Erzeugen der *.rst-Files für die C-Sourcen lautet dann:
+
+```console
+sphinx-c-apidoc -o outputpath inputpath
+```
+Dabei ist outputpath der Pfad zum Doku-Verzeichnis und inputpath der zu den C-Sourcen.
+
+Ausserdem:
+
+in **config.py** den Suchpfad relativ zu config.py ergänzen:
+
+```python
+import os
+import sys
+THIS_DIR = os.path.abspath(os.path.join('.'))
+print (f"Wir sind in: {THIS_DIR}")
+SOURCE_DIR = os.path.abspath(os.path.join('.', '..', 'main'))
+sys.path.insert(0, SOURCE_DIR)
+print (f"Sourcen sind in: {SOURCE_DIR}")
+```
+
+die extensions ergänzen
+
+```python
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.coverage', 'sphinx.ext.napoleon',
+              'sphinx_rtd_theme', 'myst_parser',
+            'sphinx_c_autodoc', 'sphinx_c_autodoc.napoleon', 'sphinx_c_autodoc.viewcode'
+            ]
+```
+für sphinx_c_autodoc zusätzlich die Verzeichnisse eingeben:
+
+```python
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.coverage', 'sphinx.ext.napoleon',
+              'sphinx_rtd_theme', 'myst_parser',
+            'sphinx_c_autodoc', 'sphinx_c_autodoc.napoleon', 'sphinx_c_autodoc.viewcode'
+            ]
+```
+
+### Extensions
+Evtl installieren für myst_parser:
+```console
+pip install myst-parser
+```
+
+
 ## manuelles Anlegen
 
 Manuelles Anlegen der Projektstruktur für ein Python-Projekt oder eine beliebige andere Doku.
 
-Verzeichnis anlegen, wie oben und conf.py von geeigneter Vorlage kopieren.
+Verzeichnis anlegen, wie oben und conf.py und index.rst von geeigneter Vorlage kopieren.
 
 ## Skripte für Ausgabe
 
@@ -80,6 +151,10 @@ Anpassung wie [](#makeall_chmps) aber ohne `$windowtitle`{l=Powershell}
 
 `a = "b"`{l=python}
 
+### build_sphinx_doku.py
+Neue Version zum Erzeugen von Html in Python (ohne powershell).
+Beispiel unter *C:\Users\Klaus\Documents\_m\Excel-Doku\Ersatz_Auftragsverfolgung*
+
 ## conf.py ergänzen
 
 Damit die Python-Projketdateien gefunden werden, am Anfang sys.path erweitern.\
@@ -100,7 +175,7 @@ Hier wird das Verzeichnis FotoAlbum in den Suchpfad eingefügt:
 
 Allgemeines:
 
- ```{code-block} python
+```{code-block} python
     project = 'knoffhoff'
     copyright = '2024, Klaus Etscheidt'
     author = 'Klaus Etscheidt'

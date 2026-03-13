@@ -62,7 +62,15 @@ ergibt:
 Achtung
 ```
 
-### Software-Modul
+### Verwenden von restructured text
+
+Kann über die rst-directive eingebunden werden.
+
+````md
+```{eval-rst}
+.. autocmacro:: ablauf.c::MINUTES
+```
+````
 
 ## roles
 Sphinx :rolle: wird zu {rolle}
@@ -175,13 +183,3 @@ Referenzen gehen anscheinend nur mit der Syntax [meinText](#targets-automatisch-
 ```console
 myst-anchors -l 2 meine.md
 ```
-
-## Markdown generell
-
-### VS-Code
-
-s. https://code.visualstudio.com/docs/languages/markdown
-
-To switch between views, press **Ctrl+Shift+V** in the editor. 
-
-You can view the preview side-by-side **(Ctrl+K V)** with the file you are editing and see changes reflected in real-time as you edit.

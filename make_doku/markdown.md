@@ -4,6 +4,17 @@
 
 https://www.markdownguide.org/cheat-sheet/
 
+## Emojis
+
+> **💡 Tipp** 
+> mit den folgenden Symbolen können Textblocks hervorgehoben werden:  
+> ⚠️ Achtung  
+> ℹ️ Hinweis  
+> ❗ Wichtig  
+> 🚨 Warnung  
+> 💡 Tipp  
+> 🔴 Fehler  
+
 ## VS-Code
 
 s. https://code.visualstudio.com/docs/languages/markdown
